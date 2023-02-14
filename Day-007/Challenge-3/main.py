@@ -27,9 +27,8 @@ while not no_more_blanks:
             display[position] = letter
 
     print(display)
-    no_more_blanks = True
-    for position in range(word_length):
-        if display[position] == "_":
-            no_more_blanks = False
+    
+    if "_" not in display:
+        no_more_blanks = True
 
 print("You win.")
