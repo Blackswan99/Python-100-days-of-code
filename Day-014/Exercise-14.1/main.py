@@ -1,3 +1,5 @@
+import random
+
 data = [
     {
         'name': 'Instagram',
@@ -300,3 +302,12 @@ data = [
         'country': 'United States'
     }
 ]
+
+# Data array has 50 entries (0..49)
+
+a = random.randint(0,49)
+print(data[a])
+b = a
+while b == a:
+    b = random.randint(0,49)
+print(data[b])
