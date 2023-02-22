@@ -1,5 +1,25 @@
 import random
 
+logo = """
+    __  ___       __             
+   / / / (_)___ _/ /_  ___  _____
+  / /_/ / / __ `/ __ \/ _ \/ ___/
+ / __  / / /_/ / / / /  __/ /    
+/_/ ///_/\__, /_/ /_/\___/_/     
+   / /  /____/_      _____  _____
+  / /   / __ \ | /| / / _ \/ ___/
+ / /___/ /_/ / |/ |/ /  __/ /    
+/_____/\____/|__/|__/\___/_/     
+"""
+
+vs = """
+ _    __    
+| |  / /____
+| | / / ___/
+| |/ (__  ) 
+|___/____(_)
+"""
+
 data = [
     {
         'name': 'Instagram',
@@ -303,11 +323,36 @@ data = [
     }
 ]
 
-# Data array has 50 entries (0..49)
-
+print(logo)
+score = 0
+lost = False
 a = random.randint(0,49)
-print(data[a])
 b = a
-while b == a:
-    b = random.randint(0,49)
-print(data[b])
+while lost == False:
+    while b == a:
+        b = random.randint(0,49)
+
+    if int(data[b]['follower_count']) > int(data[a]['follower_count']):
+        win = 'B'
+    else:
+        win = 'A'
+
+    print(f"Compare A: {data[a]['name']}, a {data[a]['description']}, from {data[a]['country']}")
+    print(vs)
+    print(f"Against B: {data[b]['name']}, a {data[b]['description']}, from {data[b]['country']}")
+    guess = input("Who has more followers? Type 'A' or 'B': ").upper()
+
+    if guess == win:
+        #Win
+        score += 1
+        print(f"Win. Your score is {score}.")
+        a = b
+        
+    else:
+        #Lose
+        print(f"{data[a]['name']} has {data[a]['follower_count']} followers. {data[b]['name']} has {data[b]['follower_count']} followers.")
+        print("You lose.")
+        lost = True
+
+
+
