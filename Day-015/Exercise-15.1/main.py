@@ -30,3 +30,20 @@ resources = {
     "coffee": 100,
 }
 
+def order():
+    
+    while ordered_item != "espresso" or ordered_item != "latte" or ordered_item != "cappuccino":
+        ordered_item = input("What would you like? (espresso/latte/cappuccino): ").lower()
+
+def check_resources():
+    print()
+
+def payment():
+    print("Please insert coins.")
+    
+#take order
+order()
+#process coins
+payment()
+#check resources
+check_resources()
