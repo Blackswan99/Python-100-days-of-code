@@ -2,13 +2,9 @@ from turtle import Turtle, Screen
 
 timmy = Turtle()
 timmy.color("coral")
-timmy.forward(100)
-timmy.right(90)
-timmy.forward(100)
-timmy.right(90)
-timmy.forward(100)
-timmy.right(90)
-timmy.forward(100)
+for i in range(4):
+    timmy.forward(100)
+    timmy.right(90)
 
 screen = Screen()
 screen.exitonclick()
