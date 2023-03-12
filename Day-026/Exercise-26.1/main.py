@@ -12,3 +12,8 @@ print(new_numbers)
 names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Freddie"]
 short_names = [name for name in names if len(name) < 5]
 print(short_names)
+
+# Conditional list comprehension exercise
+names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Freddie"]
+long_names_as_cap = [name.upper() for name in names if len(name) > 5]
+print(long_names_as_cap)
