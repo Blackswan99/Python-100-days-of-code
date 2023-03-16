@@ -20,12 +20,18 @@ window = Tk()
 window.title("Pomodoro")
 window.config(padx=90, pady=50, bg=YELLOW)
 
+title_label = Label(text="Timer", fg=GREEN, font=(FONT_NAME, 40), bg=YELLOW)
+title_label.grid(column=1, row=0)
 
 photo = PhotoImage(file="tomato.png")
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 canvas.create_image(100, 112, image=photo)
+canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 20, "bold"))
+canvas.grid(column=1, row=1)
 
-canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT_NAME, 15, "bold"))
-canvas.pack()
-
+start_button = Button(text="Start")
+start_button.grid(column=0, row=2)
+reset_button = Button(text="Reset")
+reset_button.grid(column=2, row=2)
 window.mainloop()
+
